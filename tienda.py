@@ -18,21 +18,23 @@ if menu in "comprar":
         input("por favor ingrese nombre y apellido: \r\n")
         input("Por favor digite su numero de documento: \r\n")
         input("por favor ingrese su edad \r\n")
-        input("Cual de los productos desea llevar \r\n")
-        if artic in "Sal":
+        compra=input("Cual de los productos desea llevar \r\n")
+        if compra in "Sal":
             print("Empieza tu compra")
             can5= int(input("Sal \r\n"))
+            def cant5():
+                global can5
             cant5=  can5 + precio1 * 1.15
             canT1= cant5
             print(canT1)   
-        else:
-            if artic1 in "Lentejas":
-                print("Empieza tu compra")
-                can6= int(input("Lentejas \r\n"))
-                cant6= can6 + precio2 * 1.15
-                canT2= cant6
-                print(canT2)
-                opcion2=input("¿Quiere seguir comprando?") 
+        if compra == "Lentejas":
+            print("Empieza tu compra")
+            can6= int(input("Lentejas \r\n"))
+            def can6():
+                global cant6
+            cant6= can6 + precio2 * 1.15
+            canT2= cant6 
+            print(canT2)
     #Input para preguntarle al cliente si quiere seguir comprando.
     opcion= input("¿Quiere seguir comprando? \r\n")
     #El while lo coloque por si decia que "si" queria comprar entonces
@@ -48,11 +50,10 @@ if menu in "comprar":
         # y que no sea repetitivo y pare el ciclo.
         break
     #Este if no coloque por si el cliente dice que no quiere comprar nada mas. 
-    if opcion1 == "no": 
-        cant=can5 *precio1
-        
+    def cant(int):
+        global can 
     if opcion == "no":
-        cant= can*precio1
+        cant= cant(int())*precio1
         cant1= can1*precio2
         canT= cant+cant1
         print(canT)

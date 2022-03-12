@@ -4,8 +4,8 @@ menu=input("Que accion quiere hacer: comprar o vender o salirse \r\n")
 #Variables de los productos de la tienda en este caso coloque dos
 artic="Sal"
 artic1="Lentejas"
-precio1= 500000
-precio2= 700000
+precio1= 500000 / 1.15 * 0.15
+precio2= 700000 / 1.15 * 0.15
 #En primer lugar lo que hice fue hacer un if donde pudiera elegir 
 # entre dos opciones que son comprar y vender.
 if menu in "comprar":

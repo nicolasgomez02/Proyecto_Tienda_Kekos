@@ -39,18 +39,18 @@ if menu in "comprar":
             #Print de la informacion que hizo el cliente.
             print("Nombre cliente:", nom1 ,"\r\n", "Numero de documento:",doc1,"\r\n", "Telefono del cliente:",phon1,"\r\n", "Correo del cliente:",email1,"\r\n", "Cantidad total con IVA:", canT1,"\r\n" )   
             #Condicion de si eligi "Lentejas".
-            if compra == "Lentejas":
-                print("Empieza tu compra")
-                #operacion al agregar del IVA con el producto "Lentejas".
-                can6= int(input("Lentejas \r\n"))
-                cant8= precio2 / 1.15
-                cant6= cant8 * 0.15 
-                canT2= cant6 
-                if canT2 > 1000000:
-                    total4=canT2-30000
+        if compra == "Lentejas":
+            print("Empieza tu compra")
+            #operacion al agregar del IVA con el producto "Lentejas".
+            can6= int(input("Lentejas \r\n"))
+            cant8= precio2 / 1.15
+            cant6= cant8 * 0.15 
+            canT2= cant6 
+            if canT2 > 1000000:
+              total4=canT2-30000
                 #Print con round, el round sirve para redondear o acomodar un numero decimal con muchos valores. 
-                print(round(canT2))
-                print("nombre cliente: ", nom1,"\r\n", "numero de documento:",doc1,"\r\n", "Telefono del cleinte:",phon1,"\r\n","Cantidad total con IVA:", canT2, "\r\n")
+            print(round(canT2))
+            print("nombre cliente: ", nom1,"\r\n", "numero de documento:",doc1,"\r\n", "Telefono del cleinte:",phon1,"\r\n","Correo del cliente: ",email1,"\r\n","Cantidad total con IVA:", canT2, "\r\n")
     #Variable con input para preguntarle al cliente si quiere seguir comprando.
     opcion= input("¿Quiere seguir comprando? \r\n")
     #El while lo coloque por si decia que "si" queria comprar entonces
@@ -73,7 +73,7 @@ if menu in "comprar":
         #Condicion por si el cliente elige la opcion "si".
         if opcion1 == "si":
             #Imprime la informacion o el recibo.
-            print("nombre cliente:", nom1, "\r\n", "numero de documento:",doc1,"\r\n", "Telefono del cliente:",phon1,"\r\n","Cantidad de productos extras comprados:", canT,"\r\n")     
+            print("nombre cliente:", nom1, "\r\n", "numero de documento:",doc1,"\r\n", "Telefono del cliente:",phon1,"\r\n", "Correo del cliente:",email1,"\r\n","Cantidad de productos extras comprados:", canT,"\r\n")     
         if opcion1 == "no":
             print("nombre cliente:", nom1, "\r\n", "numero de documento:",doc1,"\r\n", "Telefono del cliente:",phon1,"\r\n","Cantidad de productos extras comprados:", canT,"\r\n")
         #El break sirve para romper un ciclo, para que solo se repita una sola vez, osea ya cuando la condicion se cumple. 
@@ -97,6 +97,8 @@ if menu in "comprar":
                      cant9= precio1 / 1.15
                      can5=  cant9 * 0.15
                      canT1= can5
+                     cant8= can5 * precio1
+                     cant01= cant8
                    if canT1 > 1000000:
                      total1=canT1-30000
                      print(round(canT1))
@@ -108,6 +110,8 @@ if menu in "comprar":
                     cant8= precio2 / 1.15
                     cant6= cant8 * 0.15 
                     canT2= cant6
+                    cant08= can5 * precio2
+                    cant01= cant08
                     if canT2 > 1000000:
                      total1=canT2-30000
                     print(round(canT2))
@@ -127,12 +131,12 @@ if menu in "comprar":
                   canti3= canti1*precio1
                   canti4= canti2*precio2
                   cant0= canti3 + canti4
-                  Total2= can5 * 0.3
-                  Total3= can5 - Total2
+                  Total2= cant0 * 0.3
+                  Total3= cant0 - Total2
                   print("El descuento por esta venta es: ", Total3)
                   print("nombre cliente:", nom3,"\r\n", "numero de documento:",doc3,"\r\n", "Telefono del cliente:",phon3,"\r\n", "Correo del cliente:",email3,"\r\n", "venta con descuento:", Total3,"\r\n")  
                   break
-        #Esta es la opcion de vender   
+ #Esta es la opcion primaria de vender 
 if menu in "vender":
     print("Has seleccionado el modulo de vender")
     dep2=int(input("Para inicar deposite un valor mayor a 1 millon de pesos \r\n"))
@@ -146,13 +150,13 @@ if menu in "vender":
         cant2=int(input("Lentejas\r\n"))
         cant3= cant1*precio1
         cant4= cant2*precio2
-        if cant3+cant4 > 1000000:
-            total1=cant3+cant4-30000
-            Total= cant6 * 0.3
-            Total4= cant6 - Total
-            print("El descuento por esta venta es: ", Total4)
-            print("nombre cliente:", nom,"\r\n", "numero de documento:",doc,"\r\n", "Telefono del cleinte:",phon,"\r\n", "Correo del cliente:",email,"\r\n", "venta con descuento:", Total4,"\r\n")
-            break
+        can9= cant3 + cant4
+        Total= can9 * 0.3
+        Total4= can9 - Total 
+        print("El descuento por esta venta es: ", Total4)
+        print("nombre cliente:", nom,"\r\n", "numero de documento:",doc,"\r\n", "Telefono del cleinte:",phon,"\r\n", "Correo del cliente:",email,"\r\n", "venta con descuento:", Total4,"\r\n")
+        continue
+
 else:
     print("Muchas gracias por estar en nuestra tienda y que vuelva muy pronto")
 
